@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <title>Author sample project</title>
+ 
+<body>
+
+<h2>Author entry Saiprathap Reddy</h2>
+
+<form>
+    <label for="authorlabel1">The hidden author name </label>
+    <input type ="password" id="authorlabel1" name="authorlabel1" value=Dickens> <br>
+
+    <label for="authorlabel2">Guess the author</label>
+    <input type ="text" id="authorlabel2" name="authorlabel2" autofocus> <br>
+
+    <input type="button" onclick="checkAuthor()" value="Check the guess">
+</form>
+
+
+<p id="result">Result guess </p>
+
+<script> 
+let good=0
+let oops=0
+
+function checkAuthor(){
+    console.log("Getting form values")
+    result1 = document.getElementById("authorlabel1").value
+    result2 = document.getElementById("authorlabel2").value
+    compareValue = result1==result2
+    
+    out = document.getElementById("result")
+    if(compareValue){
+        good=good+1
+        alert("You got it right")
+        out.innerHTML = good
+    } else {
+        oops=oops+1
+        alert("Sorry")
+        out.innerHTML = oops
+    }
+}
+</script>
+
+</body>
+</html> 
