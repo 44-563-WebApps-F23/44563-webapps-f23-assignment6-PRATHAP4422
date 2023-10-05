@@ -11,20 +11,22 @@
 <h2>Sai prathap Pulagam goes on a cruise</h2>
       
       <form>
-        
+        <div class="mb-3">
         <input type="checkbox" id="cabin" name="item1"   
           value="true" checked>
         <label for="cabin">Shares Cabin</label></br>
-        
+    </div>  
+        <div class="mb-3">
         <input type="checkbox" id="bf" name="item2" 
            value="true" checked>
         <label for="bf">Breakfast</label></br>
-        
+    </div>  
+        <div class="mb-3">
         <input type="checkbox" id="pool" name="item3"   
            value="false" >
         <label for="pool">Pool Pass</label></br>
-        
-        <input type="button"  onclick="selectCruise()" value="Select a cruise">
+    </div>  
+        <input type="button" class="btn btn-success" onclick="selectCruise()" value="Select a cruise">
       </form>
       
 
@@ -58,7 +60,7 @@ function selectCruise() {
     <label for="price">Enter price</label>
     <input type="text" id="price" name="price"  ></br>
   
-    <input type="button"  onclick="updateCruise()" value="Update the cruise">
+    <input type="button"  class="btn btn-info" onclick="updateCruise()" value="Update the cruise">
   </form>
   <p id="result1"> Latest cruise details</p>
   <script> 
