@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Cruise sample page
+        </title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+     </head>
+<body>
+
+<h2>Sai prathap Pulagam goes on a cruise</h2>
+      
+      <form>
+        
+        <input type="checkbox" id="cabin" name="item1"   
+          value="true" checked>
+        <label for="cabin">Shares Cabin</label></br>
+        
+        <input type="checkbox" id="bf" name="item2" 
+           value="true" checked>
+        <label for="bf">Breakfast</label></br>
+        
+        <input type="checkbox" id="pool" name="item3"   
+           value="false" >
+        <label for="pool">Pool Pass</label></br>
+        
+        <input type="button"  onclick="selectCruise()" value="Select a cruise">
+      </form>
+      
+
+
+<p id="result"> Select the values for desired cruise </p>
+
+<script> 
+ let my_cruise = {};
+function selectCruise() {
+    console.log("Getting input")
+    my_cruise = {};
+     cabin = document.getElementById("cabin").checked
+     bf = document.getElementById("bf").checked
+     poolp = document.getElementById("pool").checked
+    
+    out = document.getElementById("result")
+    my_cruise["shared"]=cabin;
+    my_cruise["breakfast"]=bf;
+    my_cruise["pool"]=poolp;
+    console.log(my_cruise);
+    out.innerHTML = JSON.stringify(my_cruise)
+
+}
+</script>
+
+
+
+</body>
+</html>
