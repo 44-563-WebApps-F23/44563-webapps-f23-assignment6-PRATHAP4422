@@ -49,7 +49,32 @@ function selectCruise() {
 
 }
 </script>
-
+<form>
+  
+    <label for="days">Enter the number of days</label>
+    <input type="text" id="days" name="days"   
+      value="days" ></br>
+  
+    <label for="price">Enter price</label>
+    <input type="text" id="price" name="price"  ></br>
+  
+    <input type="button"  onclick="updateCruise()" value="Update the cruise">
+  </form>
+  <p id="result1"> Latest cruise details</p>
+  <script> 
+   function updateCruise() {
+       console.log("Getting input")
+       days = document.getElementById("days").value
+       price = document.getElementById("price").value
+       
+       out = document.getElementById("result1")
+       my_cruise["Days"]=days;
+       my_cruise["Price"]=price;
+       console.log(my_cruise);
+       out.innerHTML = JSON.stringify(my_cruise)
+   
+   }
+   </script>
 
 
 </body>
