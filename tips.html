@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Tips Sample page
+        </title>
+     </head>
+<body>
+
+<h2>SaiPrathap Pulagam shows tip amounts</h2>
+
+<form>
+    
+    <label for="baseid">Enter base amount</label>
+    <input type ="number" id="baseid" name="baseamt" value=50> <br>  
+    <label for="tipid">Enter the tip percent</label>
+    <input type ="number" id="tipid" name="tip" value=15> <br>   
+    <input type="button"  onclick="tips()" value="Show tip">
+    </div>
+</form>
+
+
+<p id="tipsresult">This text will be replaced </p>
+
+<script> 
+
+function tips (){
+    console.log("Getting form values")
+    base = document.getElementById("baseid").value
+    tip =parseInt(document.getElementById("tipid").value)
+    let myOutput=""
+    for(i=0; i<5;i++){
+        myOutput=myOutput+tip+"% is "+(base*(tip/100)).toFixed(1)+";  "
+        tip=tip+4
+    }
+    
+     document.getElementById("tipsresult").innerHTML="Tips are: "+myOutput
+}
+</script>
+
+
+
+
+
+
+</body>
+</html>
