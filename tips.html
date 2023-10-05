@@ -20,7 +20,7 @@
 </form>
 
 
-<p id="tipsresult">This text will be replaced </p>
+<p id="tipsresult">Calculate tips </p>
 
 <script> 
 
@@ -40,7 +40,42 @@ function tips (){
 
 
 
+<form>
+    <input type="radio" id="sid" name="Arop" value="sum" onclick="chooseOp()">
+    <label for="sid">sum</label></br>
+  
+    <input type="radio" id="did" name="Arop" onclick="chooseOp()" 
+       value="difference">
+    <label for="did">diff</label></br>
+  
+    <input type="radio" id="mid" name="Arop" onclick="chooseOp()" 
+       value="product">
+    <label for="mid">mult</label></br>
 
+    <p id="opid">Arithmetic operations result </p>
+
+</form>
+
+<script> 
+function chooseOp() {
+console.log("Getting input")
+ var baseamount = parseInt(document.getElementById("baseid").value);
+ var tipvalue = parseInt(document.getElementById("tipid").value);
+if(document.getElementById("sid").checked){
+    sum=baseamount+tipvalue;
+    document.getElementById("opid").innerHTML = "Sum of "+baseamount+" and "+tipvalue+" : "+sum;
+} 
+if(document.getElementById("did").checked){
+    document.getElementById("opid").innerHTML = "Difference of "+baseamount+" and "+tipvalue+" : "+Math.abs(baseamount-tipvalue);
+
+}
+if(document.getElementById("mid").checked){
+    document.getElementById("opid").innerHTML = "Product of "+baseamount+" and "+tipvalue+" : "+baseamount*tipvalue;
+
+}
+}
+
+</script>
 
 
 </body>
